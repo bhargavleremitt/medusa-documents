@@ -10,8 +10,19 @@
  * limitations under the License.
  */
 
-export { OrdersTab } from './tabs/orders-tab';
-export { TemplatesTab } from './tabs/templates-tab/templates-tab';
-export { SettingsTab } from './tabs/settings-tab';
-export { FiraTab } from './tabs/fira-tab';
-export { Csb5Tab } from './tabs/csb5-tab';
+import { Container } from "@medusajs/ui"
+import { Grid } from "@mui/material";
+import CSB5Table from "../csb5/csb5-table";
+
+export const Csb5Tab = () => {
+
+  return (
+    <Grid container spacing={2}  >
+      <Grid item xs={12} md={12} xl={12}>
+        <Container>
+          <CSB5Table/>
+        </Container>
+      </Grid>
+    </Grid>
+  )
+}
