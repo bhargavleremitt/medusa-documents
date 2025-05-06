@@ -290,7 +290,7 @@ const DATA = [
   ]
   
 
-const CSB5Table = () => {
+const Csb5Table = () => {
   const columns = useMemo(() => COLUMNS, [])
   const data = useMemo(() => DATA, [])
 
@@ -360,4 +360,4 @@ const CSB5Table = () => {
   )
 }
 
-export default React.memo(CourierCSBTable)
+export default React.memo(Csb5Table)

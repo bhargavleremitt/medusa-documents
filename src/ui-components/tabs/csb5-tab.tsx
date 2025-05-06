@@ -12,7 +12,7 @@
 
 import { Container } from "@medusajs/ui"
 import { Grid } from "@mui/material";
-import CSB5Table from "../csb5/csb5-table";
+import Csb5Table from "../csb5/csb5-table";
 
 export const Csb5Tab = () => {
 
@@ -20,7 +20,7 @@ export const Csb5Tab = () => {
     <Grid container spacing={2}  >
       <Grid item xs={12} md={12} xl={12}>
         <Container>
-          <CSB5Table/>
+          <Csb5Table/>
         </Container>
       </Grid>
     </Grid>
