@@ -27,7 +27,7 @@ const DocumentsPage = () => {
       <Toaster position="top-right"/>
       <Tabs.List >
         <Tabs.Trigger value='orders'>Orders</Tabs.Trigger>
-        <Tabs.Trigger value='orders'>FIRA</Tabs.Trigger>
+        <Tabs.Trigger value='fira'>FIRA</Tabs.Trigger>
         <Tabs.Trigger value='templates'>Templates</Tabs.Trigger>
         <Tabs.Trigger value='settings'>Settings</Tabs.Trigger>
         {/* {import.meta.env.VITE_MEDUSA_ADMIN_MEDUSA_DOCUMENTS_HIDE_PRO === undefined && <Grid container justifyContent={'end'}>
