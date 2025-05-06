@@ -10,7 +10,19 @@
  * limitations under the License.
  */
 
-export { OrdersTab } from './tabs/orders-tab';
-export { TemplatesTab } from './tabs/templates-tab/templates-tab';
-export { SettingsTab } from './tabs/settings-tab';
-export { FiraTab } from './tabs/fira-tab';
+import { Container } from "@medusajs/ui"
+import { Grid } from "@mui/material";
+import FiraTable from "../fira/fira-table";
+
+export const FiraTab = () => {
+
+  return (
+    <Grid container spacing={2}  >
+      <Grid item xs={12} md={12} xl={12}>
+        <Container>
+          <FiraTable/>
+        </Container>
+      </Grid>
+    </Grid>
+  )
+}
