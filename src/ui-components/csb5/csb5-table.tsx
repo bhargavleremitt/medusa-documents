@@ -21,7 +21,7 @@ const COLUMNS = [
   { Header: "Port of Loading", accessor: "portOfLoading" },
   { Header: "Date of Departure", accessor: "departureDate" },
   { Header: "HAWB Number", accessor: "hawbNumber" },
-  { Header: "Number of Packages / Pieces / Bags / ULD", accessor: "numPackages" },
+  { Header: "Number of Packages", accessor: "numPackages" },
   { Header: "Declared Weight (Kg)", accessor: "declaredWeight" },
   { Header: "Destination Airport", accessor: "destinationAirport" },
   { Header: "IEC", accessor: "iec" },
@@ -317,34 +317,47 @@ const Csb5Table = () => {
 
   return (
     <>
-      <Table {...getTableProps()} className={clsx({ ["relative"]: false })}>
-        <Table.Header>
-          {headerGroups.map((headerGroup) => (
-            <Table.Row {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <Table.HeaderCell {...column.getHeaderProps()}>
-                  {column.render("Header")}
-                </Table.HeaderCell>
-              ))}
-            </Table.Row>
-          ))}
-        </Table.Header>
-
-        <Table.Body {...getTableBodyProps()}>
-          {page.map((row) => {
-            prepareRow(row)
-            return (
-              <Table.Row {...row.getRowProps()} className="group">
-                {row.cells.map((cell) => (
-                  <Table.Cell {...cell.getCellProps()} className="inter-small-regular h-[40px]">
-                    {cell.render("Cell")}
-                  </Table.Cell>
+      {/* Outer wrapper to allow scrolling */}
+      <div className="w-full overflow-auto border rounded">
+        <Table {...getTableProps()} className={clsx({ ["relative"]: false })}>
+          <Table.Header className="bg-gray-100 sticky top-0 z-10">
+            {headerGroups.map((headerGroup) => (
+              <Table.Row {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((column) => (
+                  <Table.HeaderCell
+                    {...column.getHeaderProps()}
+                    className="whitespace-nowrap"
+                  >
+                    {column.render("Header")}
+                  </Table.HeaderCell>
                 ))}
               </Table.Row>
-            )
-          })}
-        </Table.Body>
-      </Table>
+            ))}
+          </Table.Header>
+
+          {/* Make body scrollable if you want vertical scroll too */}
+          <Table.Body
+            {...getTableBodyProps()}
+            className="block max-h-[400px] overflow-y-auto"
+          >
+            {page.map((row) => {
+              prepareRow(row)
+              return (
+                <Table.Row {...row.getRowProps()} className="group">
+                  {row.cells.map((cell) => (
+                    <Table.Cell
+                      {...cell.getCellProps()}
+                      className="inter-small-regular h-[40px] whitespace-nowrap"
+                    >
+                      {cell.render("Cell")}
+                    </Table.Cell>
+                  ))}
+                </Table.Row>
+              )
+            })}
+          </Table.Body>
+        </Table>
+      </div>
 
       <Table.Pagination
         count={data.length}
