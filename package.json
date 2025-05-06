@@ -1,6 +1,6 @@
 {
   "name": "@rsc-labs/medusa-documents-v2",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "description": "Generate documents from Medusa",
   "author": "RSC Labs (https://rsoftcon.com)",
   "license": "MIT",
@@ -72,7 +72,7 @@
     "@medusajs/icons": "^2.7.0",
     "@medusajs/medusa": "^2.7.0",
     "@medusajs/test-utils": "^2.7.0",
-    "@medusajs/ui": "4.0.3",
+    "@medusajs/ui": "4.0.9",
     "@mikro-orm/cli": "6.4.3",
     "@mikro-orm/core": "6.4.3",
     "@mikro-orm/knex": "6.4.3",
