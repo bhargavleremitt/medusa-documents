@@ -7,7 +7,6 @@ const DEFAULT_PAGE_SIZE = 15
 
 // Static fields and seeded data for Amazon, Walmart, ETSY
 const COLUMNS = [
-  { Header: "Company", accessor: "company" },
   { Header: "IRM", accessor: "irm" },
   { Header: "Beneficiary Name", accessor: "beneficiaryName" },
   { Header: "Beneficiary Account", accessor: "beneficiaryAccount" },
@@ -23,7 +22,6 @@ const COLUMNS = [
 
 const DATA = [
   {
-    company: "Amazon",
     irm: "AMZ-001",
     beneficiaryName: "John Doe",
     beneficiaryAccount: "123456789012",
@@ -37,7 +35,6 @@ const DATA = [
     remitterAddress: "410 Terry Ave N, Seattle, WA 98109",
   },
   {
-    company: "Walmart",
     irm: "WMT-002",
     beneficiaryName: "Jane Smith",
     beneficiaryAccount: "987654321098",
@@ -51,7 +48,6 @@ const DATA = [
     remitterAddress: "702 SW 8th St, Bentonville, AR 72716",
   },
   {
-    company: "ETSY",
     irm: "ETS-003",
     beneficiaryName: "Alice Johnson",
     beneficiaryAccount: "112233445566",
