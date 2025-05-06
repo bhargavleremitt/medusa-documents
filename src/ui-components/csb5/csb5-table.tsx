@@ -318,9 +318,9 @@ const Csb5Table = () => {
   return (
     <>
       {/* Outer wrapper to allow scrolling */}
-      <div className="w-full overflow-auto border rounded">
+      <div className="w-full overflow-auto">
         <Table {...getTableProps()} className={clsx({ ["relative"]: false })}>
-          <Table.Header className="bg-gray-100 sticky top-0 z-10">
+          <Table.Header>
             {headerGroups.map((headerGroup) => (
               <Table.Row {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => (
@@ -338,7 +338,7 @@ const Csb5Table = () => {
           {/* Make body scrollable if you want vertical scroll too */}
           <Table.Body
             {...getTableBodyProps()}
-            className="block max-h-[400px] overflow-y-auto"
+            className="overflow-y-auto"
           >
             {page.map((row) => {
               prepareRow(row)
