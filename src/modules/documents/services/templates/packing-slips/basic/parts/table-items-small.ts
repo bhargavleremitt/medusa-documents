@@ -66,7 +66,7 @@ export function generateItemsTable(doc, y, order: OrderDTO, items: OrderLineItem
     doc,
     totalQuantityPosition,
     "",
-    t("packing-slip-table-header-total", "Total"),
+    "Total",
     totalQuantity
   );
   doc.font("Helvetica");
