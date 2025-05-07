@@ -30,8 +30,8 @@ export function validateInput(settings?: DocumentSettingsDTO) : ([boolean, strin
 
 export default async (settings: DocumentSettingsDTO, invoice: DocumentInvoiceDTO, order: OrderDTO): Promise<Buffer> => { 
   var doc = new PDFDocument();
-  doc.registerFont('Regular', path.resolve(__dirname, '../../../../assets/fonts/IBMPlexSans-Regular.ttf'))
-  doc.registerFont('Bold', path.resolve(__dirname, '../../../../assets/fonts/IBMPlexSans-Bold.ttf'))
+  doc.registerFont('Regular', path.resolve(__dirname, 'IBMPlexSans-Regular.ttf'))
+  doc.registerFont('Bold', path.resolve(__dirname, 'IBMPlexSans-Bold.ttf'))
   doc.font('Regular');
 
   const buffers = []
