@@ -31,9 +31,7 @@ export function validateInput(settings?: DocumentSettingsDTO) : ([boolean, strin
 export default async (settings: DocumentSettingsDTO, packingSlip: DocumentPackingSlipDTO, order: OrderDTO): Promise<Buffer> => {
 
   var doc = new PDFDocument();
-  doc.registerFont('Regular', path.resolve(__dirname, 'IBMPlexSans-Regular.ttf'))
-  doc.registerFont('Bold', path.resolve(__dirname, 'IBMPlexSans-Bold.ttf'))
-  doc.font('Regular');
+  doc.font("Helvetica");
 
   const buffers = []
   doc.on("data", buffers.push.bind(buffers))

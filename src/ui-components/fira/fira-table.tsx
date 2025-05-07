@@ -8,15 +8,15 @@ const DEFAULT_PAGE_SIZE = 15
 
 // Static fields and seeded data for Amazon, Walmart, ETSY
 const COLUMNS = [
-  {
-    Header: () => null,
-    id: 'expander',
-    Cell: ({ row }) => (
-      <span {...row.getToggleRowExpandedProps()} className="cursor-pointer">
-        {row.isExpanded ? '▼' : '▶'}
-      </span>
-    ),
-  },
+  // {
+  //   Header: () => null,
+  //   id: 'expander',
+  //   Cell: ({ row }) => (
+  //     <span {...row.getToggleRowExpandedProps()} className="cursor-pointer">
+  //       {row.isExpanded ? '▼' : '▶'}
+  //     </span>
+  //   ),
+  // },
   { Header: "IRM", accessor: "irm" },
   { Header: "Beneficiary Name", accessor: "beneficiaryName" },
   { Header: "Beneficiary Account", accessor: "beneficiaryAccount" },
@@ -127,11 +127,11 @@ const FiraTable = () => {
                   </Table.Cell>
                 ))}
               </Table.Row>
-              {row.isExpanded && (
+              {/* {row.isExpanded && (
                     <Table.Row {...row.getRowProps()} className="group">
                       <OrderTable setContextFilters={setContextFilters}/>
                     </Table.Row>
-                  )}
+                  )} */}
               </React.Fragment>
             )
           })}
