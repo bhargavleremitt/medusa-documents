@@ -35,9 +35,9 @@ export function generateOrderInfoTable(doc, y, order: OrderDTO, items: OrderLine
   generateTableRow(
     doc,
     invoiceTableTop,
-    t("packing-slip-table-header-order-number", "Order #"),
-    t("packing-slip-table-header-order-date", "Order date"),
-    t("packing-slip-table-header-shipping-method", "Shipping method"),
+    "Order #",
+    "Order date",
+    "Shipping method",
   );
   generateHrInA7(doc, invoiceTableTop + 10);
   doc.font("Helvetica");

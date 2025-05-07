@@ -82,11 +82,11 @@ export function generateInvoiceTable(
   generateTableRow(
     doc,
     invoiceTableTop,
-    t("invoice-table-header-item", "Item"),
-    t("invoice-table-header-description", "Description"),
-    t("invoice-table-header-unit-cost", "Unit Cost"),
-    t("invoice-table-header-quantity", "Quantity"),
-    t("invoice-table-header-line-total", "Line Total")
+    "Item",
+    "Description",
+    "Unit Cost",
+    "Quantity",
+    "Line Total"
   );
   generateHr(doc, invoiceTableTop + 20);
   doc.font("Helvetica");
@@ -134,7 +134,7 @@ export function generateInvoiceTable(
     currentY,
     "",
     "",
-    t("invoice-table-shipping", "Shipping"),
+    "Shipping",
     "",
     amountToDisplayNormalized(
       (order.shipping_subtotal as BigNumber).numeric,
@@ -152,7 +152,7 @@ export function generateInvoiceTable(
     currentY,
     "",
     "",
-    t("invoice-table-tax", "Tax"),
+    "Tax",
     "",
     amountToDisplayNormalized(
       (order.tax_total as BigNumber).numeric,
@@ -171,7 +171,7 @@ export function generateInvoiceTable(
     currentY,
     "",
     "",
-    t("invoice-table-total", "Total"),
+    "Total",
     "",
     amountToDisplayNormalized(
       (order.total as BigNumber).numeric,

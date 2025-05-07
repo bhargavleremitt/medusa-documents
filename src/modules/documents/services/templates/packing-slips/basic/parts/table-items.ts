@@ -39,9 +39,9 @@ export function generateItemsTable(doc, y, order: OrderDTO, items: OrderLineItem
   generateTableRow(
     doc,
     invoiceTableTop,
-    t("packing-slip-table-header-item", "Item"),
-    t("packing-slip-table-header-description", "Description"),
-    t("packing-slip-table-header-quantity", "Quantity"),
+    "Item",
+    "Description",
+    "Quantity",
   );
   generateHr(doc, invoiceTableTop + 20);
   doc.font("Helvetica");
@@ -67,7 +67,7 @@ export function generateItemsTable(doc, y, order: OrderDTO, items: OrderLineItem
     doc,
     totalQuantityPosition,
     "",
-    t("packing-slip-table-header-total", "Total"),
+    "Total",
     totalQuantity
   );
   doc.font("Helvetica");

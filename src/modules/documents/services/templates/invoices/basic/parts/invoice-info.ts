@@ -18,7 +18,7 @@ export function generateInvoiceInformation(doc, y: number, invoice: DocumentInvo
   doc
     .fillColor("#444444")
     .fontSize(20)
-    .text(t("invoice", "Invoice"), 50, y + 40);
+    .text("Invoice", 50, y + 40);
 
   generateHr(doc, y + 65);
 
@@ -26,11 +26,11 @@ export function generateInvoiceInformation(doc, y: number, invoice: DocumentInvo
 
   doc
     .fontSize(10)
-    .text(`${t("invoice-number", "Invoice number")}:`, 50, invoiceInformationTop)
+    .text(`Invoice number:`, 50, invoiceInformationTop)
     .font("Helvetica-Bold")
     .text(invoice.displayNumber, 150, invoiceInformationTop)
     .font("Helvetica")
-    .text(`${t("invoice-date", "Invoice date")}:`, 50, invoiceInformationTop + 15)
+    .text(`Invoice date:`, 50, invoiceInformationTop + 15)
     .text(invoice.created_at.toLocaleDateString(), 150, invoiceInformationTop + 15)
     .moveDown();
 

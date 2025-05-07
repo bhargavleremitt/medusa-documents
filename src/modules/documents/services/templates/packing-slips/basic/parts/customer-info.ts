@@ -26,7 +26,7 @@ export function generateCustomerInformation(doc, y, order: OrderDTO) {
     doc
       .fontSize(10)
       .font("Helvetica-Bold")
-      .text(`${t("packing-slip-bill-to", "Bill to")}:`, 50, customerInformationTop, {align: 'left'})
+      .text(`Bill to:`, 50, customerInformationTop, {align: 'left'})
       .font("Helvetica")
       .text(`${order.billing_address.first_name} ${order.billing_address.last_name}`, 50, customerInformationTop + 15, {align: 'left'})
       .text(`${order.billing_address.city} ${order.billing_address.postal_code}`, 50, customerInformationTop + 30, {align: 'left'})
@@ -42,7 +42,7 @@ export function generateCustomerInformation(doc, y, order: OrderDTO) {
     doc
       .fontSize(10)
       .font("Helvetica-Bold")
-      .text(`${t("packing-slip-ship-to", "Ship to")}:`, 50, customerInformationTop, {align: 'right'})
+      .text(`Ship to:`, 50, customerInformationTop, {align: 'right'})
       .font("Helvetica")
       .text(`${order.shipping_address.first_name} ${order.shipping_address.last_name}`, 50, customerInformationTop + 15, {align: 'right'})
       .text(`${order.shipping_address.city} ${order.shipping_address.postal_code}`, 50, customerInformationTop + 30, {align: 'right'})

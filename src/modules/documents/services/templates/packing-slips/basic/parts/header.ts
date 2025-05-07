@@ -19,7 +19,7 @@ export function generateHeader(doc, y: number, documentSettings: DocumentSetting
     .fontSize(20)
 
   doc
-    .text(t("packing-slip", "Packing Slip"), 50, y, { align: "left" })
+    .text("Packing Slip", 50, y, { align: "left" })
 
   const heightCompany = doc.heightOfString(documentSettings.storeAddress?.company, { align: "left" });
   doc
