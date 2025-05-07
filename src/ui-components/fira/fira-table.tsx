@@ -119,7 +119,7 @@ const FiraTable = () => {
           {page.map((row) => {
             prepareRow(row)
             return (
-              <>
+              <React.Fragment key={row.getRowProps().key}>
               <Table.Row {...row.getRowProps()} className="group">
                 {row.cells.map((cell) => (
                   <Table.Cell {...cell.getCellProps()} className="inter-small-regular h-[40px]">
@@ -128,11 +128,11 @@ const FiraTable = () => {
                 ))}
               </Table.Row>
               {row.isExpanded && (
-                    <Table.Row>
+                    <Table.Row row={row}>
                       <OrderTable setContextFilters={setContextFilters}/>
                     </Table.Row>
                   )}
-              </>
+              </React.Fragment>
             )
           })}
         </Table.Body>
