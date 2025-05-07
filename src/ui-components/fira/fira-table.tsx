@@ -1,12 +1,22 @@
 import clsx from "clsx"
-import React, { useMemo } from "react"
-import { useTable, usePagination } from "react-table"
+import React, { useMemo, useState } from "react"
+import { useTable, usePagination, useExpanded } from "react-table"
 import { Table } from "@medusajs/ui"
+import OrderTable from "../orders/order-table"
 
 const DEFAULT_PAGE_SIZE = 15
 
 // Static fields and seeded data for Amazon, Walmart, ETSY
 const COLUMNS = [
+  {
+    Header: () => null,
+    id: 'expander',
+    Cell: ({ row }) => (
+      <span {...row.getToggleRowExpandedProps()} className="cursor-pointer">
+        {row.isExpanded ? '▼' : '▶'}
+      </span>
+    ),
+  },
   { Header: "IRM", accessor: "irm" },
   { Header: "Beneficiary Name", accessor: "beneficiaryName" },
   { Header: "Beneficiary Account", accessor: "beneficiaryAccount" },
@@ -23,7 +33,7 @@ const COLUMNS = [
 const DATA = [
   {
     irm: "AMZ-001",
-    beneficiaryName: "John Doe",
+    beneficiaryName: "Acme D2C",
     beneficiaryAccount: "123456789012",
     beneficiaryBank: "Yes Bank",
     beneficiaryAddress: "Mumbai",
@@ -36,10 +46,10 @@ const DATA = [
   },
   {
     irm: "WMT-002",
-    beneficiaryName: "Jane Smith",
-    beneficiaryAccount: "987654321098",
-    beneficiaryBank: "HDFC Bank",
-    beneficiaryAddress: "Bengaluru",
+    beneficiaryName: "Acme D2C",
+    beneficiaryAccount: "123456789012",
+    beneficiaryBank: "Yes Bank",
+    beneficiaryAddress: "Mumbai",
     amountINR: 589985.42,
     amountForeign: 7000,
     currencyCode: "USD",
@@ -49,10 +59,10 @@ const DATA = [
   },
   {
     irm: "ETS-003",
-    beneficiaryName: "Alice Johnson",
-    beneficiaryAccount: "112233445566",
-    beneficiaryBank: "ICICI Bank",
-    beneficiaryAddress: "Hyderabad",
+    beneficiaryName: "Acme D2C",
+    beneficiaryAccount: "123456789012",
+    beneficiaryBank: "Yes Bank",
+    beneficiaryAddress: "Mumbai",
     amountINR: 337134.53,
     amountForeign: 4000,
     currencyCode: "USD",
@@ -65,6 +75,9 @@ const DATA = [
 const FiraTable = () => {
   const columns = useMemo(() => COLUMNS, [])
   const data = useMemo(() => DATA, [])
+
+  const [contextFilters, setContextFilters] =
+    useState<Record<string, { filter: string[] }>>()
 
   const {
     getTableProps,
@@ -106,6 +119,7 @@ const FiraTable = () => {
           {page.map((row) => {
             prepareRow(row)
             return (
+              <>
               <Table.Row {...row.getRowProps()} className="group">
                 {row.cells.map((cell) => (
                   <Table.Cell {...cell.getCellProps()} className="inter-small-regular h-[40px]">
@@ -113,6 +127,12 @@ const FiraTable = () => {
                   </Table.Cell>
                 ))}
               </Table.Row>
+              {row.isExpanded && (
+                    <Table.Row>
+                      <OrderTable setContextFilters={setContextFilters}/>
+                    </Table.Row>
+                  )}
+              </>
             )
           })}
         </Table.Body>
