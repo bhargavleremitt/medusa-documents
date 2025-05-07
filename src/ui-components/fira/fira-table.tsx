@@ -128,7 +128,7 @@ const FiraTable = () => {
                 ))}
               </Table.Row>
               {row.isExpanded && (
-                    <Table.Row row={row}>
+                    <Table.Row {...row.getRowProps()} className="group">
                       <OrderTable setContextFilters={setContextFilters}/>
                     </Table.Row>
                   )}
