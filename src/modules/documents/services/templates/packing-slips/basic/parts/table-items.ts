@@ -35,7 +35,7 @@ export function generateItemsTable(doc, y, order: OrderDTO, items: OrderLineItem
 
   let totalQuantity = 0;
 
-  doc.font("Bold");
+  doc.font("Helvetica-Bold");
   generateTableRow(
     doc,
     invoiceTableTop,
@@ -44,7 +44,7 @@ export function generateItemsTable(doc, y, order: OrderDTO, items: OrderLineItem
     t("packing-slip-table-header-quantity", "Quantity"),
   );
   generateHr(doc, invoiceTableTop + 20);
-  doc.font("Regular");
+  doc.font("Helvetica");
   
   for (i = 0; i < items.length; i++) {
     const item = items[i];
@@ -62,7 +62,7 @@ export function generateItemsTable(doc, y, order: OrderDTO, items: OrderLineItem
   }
 
   const totalQuantityPosition = invoiceTableTop + (i + 1) * 30;
-  doc.font("Bold");
+  doc.font("Helvetica-Bold");
   generateTableRow(
     doc,
     totalQuantityPosition,
@@ -70,5 +70,5 @@ export function generateItemsTable(doc, y, order: OrderDTO, items: OrderLineItem
     t("packing-slip-table-header-total", "Total"),
     totalQuantity
   );
-  doc.font("Regular");
+  doc.font("Helvetica");
 }

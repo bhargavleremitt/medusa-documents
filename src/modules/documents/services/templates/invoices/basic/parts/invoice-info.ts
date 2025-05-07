@@ -27,9 +27,9 @@ export function generateInvoiceInformation(doc, y: number, invoice: DocumentInvo
   doc
     .fontSize(10)
     .text(`${t("invoice-number", "Invoice number")}:`, 50, invoiceInformationTop)
-    .font("Bold")
+    .font("Helvetica-Bold")
     .text(invoice.displayNumber, 150, invoiceInformationTop)
-    .font("Regular")
+    .font("Helvetica")
     .text(`${t("invoice-date", "Invoice date")}:`, 50, invoiceInformationTop + 15)
     .text(invoice.created_at.toLocaleDateString(), 150, invoiceInformationTop + 15)
     .moveDown();

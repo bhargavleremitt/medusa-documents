@@ -31,7 +31,7 @@ function generateTableRow(
 export function generateOrderInfoTable(doc, y, order: OrderDTO, items: OrderLineItemDTO[]) : number {
   const invoiceTableTop = y + 25;
 
-  doc.font("Bold");
+  doc.font("Helvetica-Bold");
   generateTableRow(
     doc,
     invoiceTableTop,
@@ -40,7 +40,7 @@ export function generateOrderInfoTable(doc, y, order: OrderDTO, items: OrderLine
     t("packing-slip-table-header-shipping-method", "Shipping method"),
   );
   generateHrInA7(doc, invoiceTableTop + 10);
-  doc.font("Regular");
+  doc.font("Helvetica");
 
   const position = invoiceTableTop + 20;
 

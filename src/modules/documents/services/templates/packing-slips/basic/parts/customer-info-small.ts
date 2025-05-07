@@ -25,9 +25,9 @@ export function generateCustomerInformation(doc, y, order: OrderDTO) {
   if (order.billing_address) {
     doc
     .fontSize(6)
-    .font("Bold")
+    .font("Helvetica-Bold")
     .text(`${t("packing-slip-bill-to", "Bill to")}:`, 25, customerInformationTop, {align: 'left'})
-    .font("Regular")
+    .font("Helvetica")
     .text(`${order.billing_address.first_name} ${order.billing_address.last_name}`, 25, customerInformationTop + 10, {align: 'left'})
     .text(`${order.billing_address.city} ${order.billing_address.postal_code}`, 25, customerInformationTop + 20, {align: 'left'})
     const billAddress = order.billing_address.address_1;
@@ -43,11 +43,11 @@ export function generateCustomerInformation(doc, y, order: OrderDTO) {
     const RIGHT_WIDTH = 100;
     doc
       .fontSize(6)
-      .font("Bold")
+      .font("Helvetica-Bold")
 
     doc
       .text(`${t("packing-slip-ship-to", "Ship to")}:`, RIGHT_MARGIN, customerInformationTop, {align: 'right', width: RIGHT_WIDTH})
-      .font("Regular")
+      .font("Helvetica")
 
     doc
       .text(`${order.shipping_address.first_name} ${order.shipping_address.last_name}`, RIGHT_MARGIN, customerInformationTop + 10, {align: 'right', width: RIGHT_WIDTH})

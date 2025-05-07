@@ -78,7 +78,7 @@ export function generateInvoiceTable(
   const invoiceTableTop = y + 35;
   const pageHeight = doc.page.height - 50;
 
-  doc.font("Bold");
+  doc.font("Helvetica-Bold");
   generateTableRow(
     doc,
     invoiceTableTop,
@@ -89,7 +89,7 @@ export function generateInvoiceTable(
     t("invoice-table-header-line-total", "Line Total")
   );
   generateHr(doc, invoiceTableTop + 20);
-  doc.font("Regular");
+  doc.font("Helvetica");
 
   let currentY = invoiceTableTop + 30;
   for (i = 0; i < items.length; i++) {
@@ -165,7 +165,7 @@ export function generateInvoiceTable(
     doc.addPage();
     currentY = 50;
   }
-  doc.font("Bold");
+  doc.font("Helvetica-Bold");
   generateTableRow(
     doc,
     currentY,
@@ -178,5 +178,5 @@ export function generateInvoiceTable(
       order.currency_code
     )
   );
-  doc.font("Regular");
+  doc.font("Helvetica");
 }
